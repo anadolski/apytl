@@ -14,7 +14,7 @@ emptor, or something.
 import logging
 import sys
 
-_EMOJIS = {
+_EMOJI = {
     'eggplant'     : '\\U0001F346',
     'middlefinger' : '\\U0001F595',
     'poop'         : '\\U0001F4A9',
