@@ -4,4 +4,4 @@ echo Building package
 python setup.py build
 echo ''
 echo Installing package
-python setup.py install --user
+python setup.py install --user --record ./.installed_files.txt
