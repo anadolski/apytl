@@ -25,14 +25,29 @@ logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 logginghandler = logging.StreamHandler()
 logginghandler.terminator = ''
 
-def parse_unicode(string):
+def parse_unicode(userstring):
     """
     Parse a unicode string of the form UXXXXXXXX or uXXXX
+    """
+    fill = (userstring
+            .encode('utf-8')
+            .decode('raw_unicode_escape'))
+    return fill
+
+def setup_bar(fill):
+    """
+    Format the arguments to be passed to the progress bar.
+
+    This function should only run once before whatever process the user
+    intends to run. It should parse the unicode (if any) and select a
+    filling factor (if necessary). We don't want to have to do this
+    parsing at each iteration of the user's function---maybe this should
+    be a decorator?
     """
     pass
 
 def drawbar(iteration, total, prefix='Progress', suffix='Complete',
-           decimal=1, barsize=50, fill=None, fillfactor=1):
+            decimal=1, barsize=50, fill=None, fillfactor=1):
     """
     Draw a progress bar on the terminal.
 
@@ -77,6 +92,10 @@ def drawbar(iteration, total, prefix='Progress', suffix='Complete',
         which shouldn't need to change for English single-width characters and
         punctuation.
     """
+    if fill is None:
+        fill = '#'
+    else:
+        fill = parse_unicode(fill)
     iteration = iteration + 1
     str_format = '{0:.' + str(decimal) + 'f}'
     percent = str_format.format(100 * (iteration / float(total)))
