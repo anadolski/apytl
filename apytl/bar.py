@@ -47,7 +47,7 @@ def setup_bar(fill):
     pass
 
 def drawbar(iteration, total, prefix='Progress', suffix='Complete',
-            decimal=1, barsize=50, fill=None, fillfactor=1):
+            decimal=1, barsize=50, fill=None):
     """
     Draw a progress bar on the terminal.
 
@@ -87,14 +87,13 @@ def drawbar(iteration, total, prefix='Progress', suffix='Complete',
             `\\U0001F4A9` --> poop emoji
             `\\u2620`     --> skull and crossbones emoji
         Note the difference in capitalization and the zero-padding.
-    fillfactor : int, optional
-        A padding factor used to accommodate unicode emojis. Default is `1`,
-        which shouldn't need to change for English single-width characters and
-        punctuation.
     """
+    fillfactor = 1
     if fill is None:
         fill = '#'
     else:
+        if len(fill) > 7:
+            fillfactor = 2
         fill = parse_unicode(fill)
     iteration = iteration + 1
     str_format = '{0:.' + str(decimal) + 'f}'
