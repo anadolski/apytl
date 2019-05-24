@@ -7,7 +7,7 @@ with open('README.md', 'r') as f:
 
 setup(
     name='apytl',
-    version='0.0a3',
+    version='0.0a4',
     author='Andrew Nadolski',
     author_email='andrew.nadolski@gmail.com',
     description='A bawdy, emoji-friendly progress bar.',
@@ -15,7 +15,7 @@ setup(
     long_description_content_type='text/markdown',
     platforms=['Linux', 'MacOS X'],
     url='https://github.com/anadolski/apytl',
-    python_requires='>=3.6',
+    python_requires='>=3.5',
     package_dir={'apytl': 'apytl'},
     packages=['apytl'],
     classifiers=[
