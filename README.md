@@ -9,7 +9,8 @@ the package, all you should need to do is `cd` to the source directory (i.e.,
 the one containing `setup.py`) and run:
 
 ```console
-[foo@bar apytl]$ ./install.sh
+python setup.py build
+python setup.py install --user --record ./.installed_files.txt
 ```
 
 If you re-clone the repo (or `git pull` or otherwise update the source code), 
@@ -18,12 +19,11 @@ bugs. Let's not forget those bugs. To reinstall---again, from the source
 directory---run:
 
 ```console
-[foo@bar apytl]$ ./reinstall.sh
+rm $(cat ./.installed_files.txt)
 ```
 
-If you're tired of all the naughty emoji progress bars and you want to uninstall 
-the package, simply run:
+This command will attempt to delete every entry in `.installed_files.txt`, so 
+use with caution.
 
-```console
-[foo@bar apytl]$ ./uninstall.sh
-```
+To reinstall, simply run the `build` and `install` commands mentioned at the 
+beginning of the section.
