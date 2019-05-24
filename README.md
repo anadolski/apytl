@@ -4,9 +4,24 @@ Here it is: another python terminal logger---apytl.
 
 # Installation
 
-I've attempted to make this easy. If this is the first time you're installing 
-the package, all you should need to do is `cd` to the source directory (i.e., 
-the one containing `setup.py`) and run:
+I've attempted to make this easy. You should be abple to use `pip` to install 
+the package by running:
+
+```console
+pip install apytl
+```
+
+You may also install from source. You may either download the files from PyPI by 
+following the `Download files` link on the package homepage, or you may clone 
+the git repository:
+
+```console
+git clone https://github.com/anadolski/apytl.git
+```
+
+If this is the first time you're installing the package, all you should need to 
+do is `cd` to the source directory (i.e., the one containing `setup.py`) and 
+run:
 
 ```console
 python setup.py build
