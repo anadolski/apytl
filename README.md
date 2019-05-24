@@ -15,7 +15,7 @@ package by running:
 pip install apytl
 ```
 
-Right now the package is only released for Python >=3.6. If `pip` complains 
+Right now the package is only released for Python >=3.5. If `pip` complains 
 about not finding a version, you can either try upgrading Python, or build from 
 source.
 
