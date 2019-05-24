@@ -15,10 +15,16 @@ import logging
 import sys
 
 _EMOJI = {
+    'dash'         : '\\U0001F4A8',
     'eggplant'     : '\\U0001F346',
+    'grimace'      : '\\U0001F62C',
     'middlefinger' : '\\U0001F595',
+    'peach'        : '\\U0001F351',
     'poop'         : '\\U0001F4A9',
     'skullnbones'  : '\\u2620',
+    'sweat'        : '\\U0001F4A6',
+    'taco'         : '\\U0001F32E',
+    'trex'         : '\\U0001F996',
 }
 
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
@@ -77,8 +83,18 @@ def drawbar(iteration, total, prefix='Progress', suffix='Complete',
 
         USE THE FOLLOWING FEATURE AT YOUR OWN PERIL:
         Choose from a preselected set of unicode emojis:
-            `eggplant`, `poop`, `skullnbones`
-        or pass your own unicode.
+            'dash'
+            'eggplant'
+            'grimace'
+            'middlefinger'
+            'peach'
+            'poop'
+            'skullnbones'
+            'sweat'
+            'taco'
+            'trex'
+        or pass your own unicode. Or pass 'random' to randomly select one of
+        the above options...it's not a bug it's a feature...
 
         Due to the variety of terminal emulators, font support, and display
         and window managers it's impossible to know how well (if at all) this
