@@ -22,6 +22,7 @@ _EMOJI = {
     'middlefinger' : '\\U0001F595',
     'peach'        : '\\U0001F351',
     'poop'         : '\\U0001F4A9',
+    'pufferfish'   : '\\U0001F421',
     'skullnbones'  : '\\u2620',
     'sweat'        : '\\U0001F4A6',
     'taco'         : '\\U0001F32E',
@@ -128,6 +129,7 @@ def drawbar(iteration, total, prefix='Progress', suffix='Complete',
             'middlefinger'
             'peach'
             'poop'
+            'pufferfish'
             'skullnbones'
             'sweat'
             'taco'
