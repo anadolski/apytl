@@ -12,8 +12,8 @@ pip install apytl
 ```
 
 You may also install from source. You may either download the files from PyPI by 
-following the `Download files` link on the package homepage, or you may clone 
-the git repository:
+following the [Download files](https://pypi.org/project/apytl/#files) link on 
+the package homepage, or you may clone the git repository:
 
 ```console
 git clone https://github.com/anadolski/apytl.git
