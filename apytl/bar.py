@@ -12,6 +12,7 @@ emptor, or something.
 """
 
 import logging
+import random
 import sys
 
 _EMOJI = {
@@ -51,6 +52,44 @@ def setup_bar(fill):
     be a decorator?
     """
     pass
+
+def check_fill(fill):
+    """
+    Check the fill passed by the user and parse it accordingly.
+
+    Parameters
+    ----------
+    fill : string
+
+    Returns
+    -------
+    fill_params : tuple; two elements: string and int
+    """
+    fillfactor = 1
+    ubytes = False
+    if fill is None:
+        # The user hasn't passed anything, so we use the default
+        fill = '#'
+    elif fill.casefold() == 'random':
+        # The user doesn't care what shows up, so we choose for them
+        choice = random.choice(list(_EMOJI.keys()))
+        fill = _EMOJI[choice]
+        ubytes = True
+    elif fill in _EMOJI.keys():
+        # The user has selected an entry in the preloaded set
+        fill = _EMOJI[fill]
+        ubytes = True
+    elif len(fill) > 1:
+        # The user has passed their own input
+        ubytes = True
+    # Now we just need to adjust the buffer width to accommodate
+    # the greater-than single-width emojis
+    if ubytes and len(fill) > 7:
+        fillfactor = 2
+    if ubytes:
+        fill = parse_unicode(fill)
+    fill_params  = fill, fillfactor
+    return fill_params
 
 def drawbar(iteration, total, prefix='Progress', suffix='Complete',
             decimal=1, barsize=50, fill=None):
@@ -104,13 +143,7 @@ def drawbar(iteration, total, prefix='Progress', suffix='Complete',
             `\\u2620`     --> skull and crossbones emoji
         Note the difference in capitalization and the zero-padding.
     """
-    fillfactor = 1
-    if fill is None:
-        fill = '#'
-    else:
-        if len(fill) > 7:
-            fillfactor = 2
-        fill = parse_unicode(fill)
+    fill, fillfactor = check_fill(fill)
     iteration = iteration + 1
     str_format = '{0:.' + str(decimal) + 'f}'
     percent = str_format.format(100 * (iteration / float(total)))
