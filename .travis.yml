@@ -44,7 +44,11 @@ jobs:
       language: generic
       python: 3.5
       env: PYTHON=3.5
-    - python: 3.6
+    - os: osx
+      language: generic
+      python: 3.6
       env: PYTHON=3.6
-    - env: PYTHON=3.7
+    - os: osx
+      language: generic
+      env: PYTHON=3.7
 
