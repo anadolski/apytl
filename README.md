@@ -1,3 +1,5 @@
+[![Build 
+Status](https://travis-ci.org/anadolski/apytl.svg?branch=master)](https://travis-ci.org/anadolski/apytl)
 # Another Python Terminal Logger
 
 Here it is: another python terminal logger---apytl.
