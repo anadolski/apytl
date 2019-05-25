@@ -1,6 +1,21 @@
 dist: xenial   # required for Python >= 3.7
 language: python
 python:
- - '3.5'
- - '3.6'
- - '3.7'
+    - '3.5'
+    - '3.6'
+    - '3.7'
+
+install:
+    - |
+      # do some pip setup
+      pip install --upgrade pip
+      pip install --upgrade pytest
+      pip install --upgrade setuptools
+      pip install --upgrade wheel
+      # install from source dist
+      python setup.py sdist
+      pip install --verbose dist/*.tar.gz
+
+script:
+    - |
+      pytest
