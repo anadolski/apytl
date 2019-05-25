@@ -54,20 +54,20 @@ beginning of the section.
 
 # Use
 You can use the progress bar for iteration tracking. All the function needs to 
-know is the total number of iterations in the loop, and the iteration that it 
-currently on. Just drop the `apytl.drawbar()` function inside your loop and pass 
-it those parameters. Here's a minimal example:
+know is the total number of iterations in the loop, and the iteration that it is 
+currently on. Just drop the `apytl.Bar().drawbar()` function inside your loop 
+and pass it those parameters. Here's a minimal example:
 
 ```python
 import time
 import apytl
 
-total_iterations = 50
+total_iterations = 25
 wait = 0.1
 
 for index, value in enumerate(range(total_iterations)):
     # Your code goes here, then we draw the progress bar
-    apytl.drawbar(value, total_iterations)
+    apytl.Bar().drawbar(value, total_iterations)
     time.sleep(wait)
 ```
 
@@ -77,20 +77,20 @@ But you probably want emojis, so do this instead:
 import time
 import apytl
 
-total_iterations = 50
+total_iterations = 25
 wait = 0.1
 
 for index, value in enumerate(range(total_iterations)):
     # Your code goes here, then we draw the progress bar
-    apytl.drawbar(value, total_iterations, fill='poop')
+    apytl.Bar().drawbar(value, total_iterations, fill='poop')
     time.sleep(wait)
 ```
 
-Ta-da! Poop all over your terminal (assuming your terminal emulator, display 
-manager, and font combinations support it).
+Ta-da! Poop all over your terminal (assuming your the combination of your 
+terminal emulator, display manager, and font supports it).
 
-`drawbar()` accepts some customization options; see the docstring for complete 
-details. Here are a couple highlights:
+`apytl.Bar().drawbar()` accepts some customization options; see the docstring 
+for complete details. Here are a couple highlights:
  * `fill`: takes arbitrary single-character alphanumeric input, or an arbitrary 
    Python-formatted unicode emoji (of the form `\\UXXXXXXXX` or `\\uXXXX`), or 
    one of a few preset options listed in the docstring.
