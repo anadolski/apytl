@@ -39,8 +39,9 @@ install:
     pip install --upgrade wheel
     pip install --upgrade codecov
     # install from source dist
-    python setup.py sdist
-    pip install --verbose -e dist/*.tar.gz
+    #python setup.py sdist
+    #pip install --verbose dist/*.tar.gz
+    pip install --verbose --user -e .
 
 script:
   - |
