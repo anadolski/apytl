@@ -1,7 +1,5 @@
 [![Build 
 Status](https://travis-ci.org/anadolski/apytl.svg?branch=master)](https://travis-ci.org/anadolski/apytl)
-![Codecov](https://img.shields.io/codecov/c/gh/anadolski/apytl.svg)
-![Codecov](https://img.shields.io/codecov/c/gh/anadolski/apytl.svg)
 [![codecov](https://codecov.io/gh/anadolski/apytl/branch/master/graph/badge.svg)](https://codecov.io/gh/anadolski/apytl)
 # Another Python Terminal Logger
 
