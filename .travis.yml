@@ -33,6 +33,7 @@ install:
     # do some pip setup
     pip install --upgrade pip
     pip install --upgrade pytest
+    pip install --upgrade pytest-cov
     pip install --upgrade setuptools
     pip install --upgrade wheel
     pip install --upgrade codecov
@@ -43,7 +44,7 @@ install:
 
 script:
   - |
-    pytest
+    pytest --cov=./
 
 jobs:
   include:
