@@ -43,7 +43,7 @@ install:
 
         # Now we'll install the target package from source
         python setup.py sdist
-        pip install --verbose dist/*.tar.gz
+        pip install --verbose -e dist/*.tar.gz
 
 script:
     - |
