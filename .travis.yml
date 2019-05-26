@@ -41,7 +41,7 @@ install:
     # install from source dist
     #python setup.py sdist
     #pip install --verbose dist/*.tar.gz
-    pip install --verbose --user -e .
+    pip install --verbose -e .
 
 script:
   - |
