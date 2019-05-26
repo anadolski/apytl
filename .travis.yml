@@ -35,6 +35,7 @@ install:
     pip install --upgrade pytest
     pip install --upgrade setuptools
     pip install --upgrade wheel
+    pip install --upgrade codecov
     # install from source dist
     python setup.py sdist
     pip install --verbose dist/*.tar.gz
@@ -63,3 +64,5 @@ jobs:
       language: generic
       env: PYTHON=3.7
 
+after_success:
+  - codecov
