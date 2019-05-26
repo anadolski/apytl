@@ -40,20 +40,7 @@ install:
     pip install --upgrade codecov
     # install from source dist
     python setup.py sdist
-    pip install --verbose dist/*.tar.gz
-
-<<<<<<< HEAD
-        # Ensure we're installing the pacakges we need for testing
-        pip install pytest
-        pip install pytest-cov
-        pip install coverage
-        pip install codecov
-
-        # Now we'll install the target package from source
-        python setup.py sdist
-        pip install --verbose -e dist/*.tar.gz
-=======
->>>>>>> parent of 32bed6c... Adjust whitespace in travis config
+    pip install --verbose -e dist/*.tar.gz
 
 script:
   - |
