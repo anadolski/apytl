@@ -11,12 +11,28 @@ branches:
 
 before_install:
   - |
-    if [[ $TRAVIS_OS_NAME == "osx" ]]; then
-        echo Installing Python virtualenv...
-        brew install python3
-        pip install --upgrade pip virtualenv
-        virtualenv -p python$PYTHON venv
-        source venv/bin/activate
+#    if [[ $TRAVIS_OS_NAME == "osx" ]]; then
+#        echo Installing Python virtualenv...
+#        brew install python3
+#        pip install --upgrade pip virtualenv
+#        virtualenv -p python$PYTHON venv
+#        source venv/bin/activate
+#    fi
+    if [[ -n "$PYTHON" ]]; then
+      echo Installing Python using conda...;
+      if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+        MINICONDA_OS=Linux; else MINICONDA_OS=MacOSX;
+      fi
+      wget https://repo.anaconda.com/miniconda/Miniconda3-latest-$MINICONDA_OS-x86_64.sh -O miniconda.sh
+      bash miniconda.sh -b -p $HOME/miniconda
+      export PATH="$HOME/miniconda/bin:$PATH"
+      hash -r
+      conda config --set always_yes yes --set changeps1 no
+      conda update -q conda
+      conda create -q -n test-environment python=$PYTHON
+      source activate test-environment
+      conda install -q conda-build
+      conda info -a
     fi
 
 install:
@@ -29,6 +45,7 @@ install:
     # install from source dist
     python setup.py sdist
     pip install --verbose dist/*.tar.gz
+
 
 script:
   - |
