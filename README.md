@@ -89,8 +89,8 @@ for index, value in enumerate(range(total_iterations)):
     time.sleep(wait)
 ```
 
-Ta-da! Poop all over your terminal (assuming your the combination of your 
-terminal emulator, display manager, and font supports it).
+Ta-da! Poop all over your terminal (assuming the combination of your display 
+manager, terminal emulator, and font supports it).
 
 `apytl.Bar().drawbar()` accepts some customization options; see the docstring 
 for complete details. Here are a couple highlights:
