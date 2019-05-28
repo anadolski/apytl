@@ -7,7 +7,7 @@ with open('README.md', 'r') as f:
 
 setup(
     name='apytl',
-    version='0.0a6',
+    version='0.0a7',
     author='Andrew Nadolski',
     author_email='andrew.nadolski@gmail.com',
     description='A bawdy, emoji-friendly progress bar.',
